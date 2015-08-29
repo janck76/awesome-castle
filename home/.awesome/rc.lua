@@ -104,7 +104,7 @@ local layouts = {
 tags = {
    names = { "1", "2", "3", "4", "5"},
    --JCK
-   layout = { layouts[2], layouts[2], layouts[3], layouts[1], layouts[4] }
+   layout = { layouts[2], layouts[2], layouts[3], layouts[1], layouts[3] }
 }
 
 for s = 1, screen.count() do
