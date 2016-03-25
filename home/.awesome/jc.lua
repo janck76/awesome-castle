@@ -32,7 +32,7 @@ function run_startup(c)
     run_once("sudo nvidia.sh","off")
 --    run_once("syndaemon","-k -i 2 -d")
     run_once("syndaemon","-t -k -i 2 -d")
-    run_once("firefox")
+-- run_once("firefox")
     run_once("insync","start")
    
     script=home .. "/scripts/devmon_e05c-5865.sh"

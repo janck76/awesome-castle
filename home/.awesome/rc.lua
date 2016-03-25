@@ -83,7 +83,7 @@ editor_cmd = terminal .. " -e " .. editor
 --JCK
 -- user defined
 browser    = "firefox"
-browser2   = "chromium"
+browser2   = "cr" -- chromium wrapper
 gui_editor = "gvim"
 graphics   = "gimp"
 mail       = terminal .. " -title mail -e env PYTHONPATH=/usr/lib/python3.3/site-packages /usr/bin/mutt"
@@ -692,7 +692,7 @@ awful.rules.rules = {
     { rule = { class = "pinentry" },
       properties = { floating = true } },
     
-    { rule = { class = "Chromium" },
+    { rule = { class = "chromium" },
       properties = { tag = tags[1][2] } },
     
     { rule = { class = "Dwb" },
