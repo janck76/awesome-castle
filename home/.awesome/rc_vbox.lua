@@ -207,12 +207,12 @@ cpuwidget = lain.widgets.cpu({
 })
 
 -- Coretemp
-tempicon = wibox.widget.imagebox(beautiful.widget_temp)
-tempwidget = lain.widgets.temp({
-    settings = function()
-        widget:set_text(" " .. coretemp_now .. "°C ")
-    end
-})
+-- tempicon = wibox.widget.imagebox(beautiful.widget_temp)
+-- tempwidget = lain.widgets.temp({
+--     settings = function()
+--         widget:set_text(" " .. coretemp_now .. "°C ")
+--     end
+-- })
 
 -- / fs
 fsicon = wibox.widget.imagebox(beautiful.widget_hdd)
@@ -223,41 +223,41 @@ fswidget = lain.widgets.fs({
 })
 
 -- Battery
-baticon = wibox.widget.imagebox(beautiful.widget_battery)
-batwidget = lain.widgets.bat({
-    settings = function()
-        if bat_now.perc == "N/A" then
-            widget:set_markup(" AC ")
-            baticon:set_image(beautiful.widget_ac)
-            return
-        elseif tonumber(bat_now.perc) <= 5 then
-            baticon:set_image(beautiful.widget_battery_empty)
-        elseif tonumber(bat_now.perc) <= 15 then
-            baticon:set_image(beautiful.widget_battery_low)
-        else
-            baticon:set_image(beautiful.widget_battery)
-        end
-        widget:set_markup(" " .. bat_now.perc .. "% ")
-    end
-})
+-- baticon = wibox.widget.imagebox(beautiful.widget_battery)
+-- batwidget = lain.widgets.bat({
+--     settings = function()
+--         if bat_now.perc == "N/A" then
+--             widget:set_markup(" AC ")
+--             baticon:set_image(beautiful.widget_ac)
+--             return
+--         elseif tonumber(bat_now.perc) <= 5 then
+--             baticon:set_image(beautiful.widget_battery_empty)
+--         elseif tonumber(bat_now.perc) <= 15 then
+--             baticon:set_image(beautiful.widget_battery_low)
+--         else
+--             baticon:set_image(beautiful.widget_battery)
+--         end
+--         widget:set_markup(" " .. bat_now.perc .. "% ")
+--     end
+-- })
 
 -- ALSA volume
-volicon = wibox.widget.imagebox(beautiful.widget_vol)
-volumewidget = lain.widgets.alsa({
-    settings = function()
-        if volume_now.status == "off" then
-            volicon:set_image(beautiful.widget_vol_mute)
-        elseif tonumber(volume_now.level) == 0 then
-            volicon:set_image(beautiful.widget_vol_no)
-        elseif tonumber(volume_now.level) <= 50 then
-            volicon:set_image(beautiful.widget_vol_low)
-        else
-            volicon:set_image(beautiful.widget_vol)
-        end
+-- volicon = wibox.widget.imagebox(beautiful.widget_vol)
+-- volumewidget = lain.widgets.alsa({
+--     settings = function()
+--         if volume_now.status == "off" then
+--             volicon:set_image(beautiful.widget_vol_mute)
+--         elseif tonumber(volume_now.level) == 0 then
+--             volicon:set_image(beautiful.widget_vol_no)
+--         elseif tonumber(volume_now.level) <= 50 then
+--             volicon:set_image(beautiful.widget_vol_low)
+--         else
+--             volicon:set_image(beautiful.widget_vol)
+--         end
 
-        widget:set_text(" " .. volume_now.level .. "% ")
-    end
-})
+--         widget:set_text(" " .. volume_now.level .. "% ")
+--     end
+-- })
 
 -- Net
 neticon = wibox.widget.imagebox(beautiful.widget_net)
@@ -383,9 +383,9 @@ for s = 1, screen.count() do
     --right_layout_add(mailicon, mailwidget)
     right_layout_add(memicon, memwidget)
     right_layout_add(cpuicon, cpuwidget)
-    right_layout_add(tempicon, tempwidget)
+    -- right_layout_add(tempicon, tempwidget)
     right_layout_add(fsicon, fswidget)
-    right_layout_add(baticon, batwidget)
+    -- right_layout_add(baticon, batwidget)
     right_layout_add(neticon,netwidget)
     right_layout_add(mytextclock, spr)
     right_layout_add(mylayoutbox[s])
@@ -519,26 +519,26 @@ globalkeys = awful.util.table.join(
     awful.key({ altkey,           }, "h",      function () fswidget.show(7) end),
 
     -- ALSA volume control
-    awful.key({ altkey }, "Up",
-        function ()
-            awful.util.spawn("amixer -q set Master 1%+")
-            volumewidget.update()
-        end),
-    awful.key({ altkey }, "Down",
-        function ()
-            awful.util.spawn("amixer -q set Master 1%-")
-            volumewidget.update()
-        end),
-    awful.key({ altkey }, "m",
-        function ()
-            awful.util.spawn("amixer -q set Master playback toggle")
-            volumewidget.update()
-        end),
-    awful.key({ altkey, "Control" }, "m",
-        function ()
-            awful.util.spawn("amixer -q set Master playback 100%")
-            volumewidget.update()
-        end),
+    -- awful.key({ altkey }, "Up",
+    --     function ()
+    --         awful.util.spawn("amixer -q set Master 1%+")
+    --         volumewidget.update()
+    --     end),
+    -- awful.key({ altkey }, "Down",
+    --     function ()
+    --         awful.util.spawn("amixer -q set Master 1%-")
+    --         volumewidget.update()
+    --     end),
+    -- awful.key({ altkey }, "m",
+    --     function ()
+    --         awful.util.spawn("amixer -q set Master playback toggle")
+    --         volumewidget.update()
+    --     end),
+    -- awful.key({ altkey, "Control" }, "m",
+    --     function ()
+    --         awful.util.spawn("amixer -q set Master playback 100%")
+    --         volumewidget.update()
+    --     end),
 
     -- MPD control
 --    awful.key({ altkey, "Control" }, "Up",
